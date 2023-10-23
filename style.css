@@ -1,0 +1,24 @@
+body {
+    background-color: #cdf7d5; /* Fondo de color verde pastel */
+}
+
+.login-container {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.register a {
+    font-weight: bold; /* Fuente en negrita */
+}
+
+.message {
+    text-align: center; /* Centro del mensaje */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.logo {
+    width: 100px; /* Tamaño deseado en píxeles */
+    height: auto; /* Autoajustar la altura según el ancho */
+}

@@ -1,0 +1,106 @@
+.minavbar {
+    background-color: #ffffff;
+    background-image: linear-gradient(90deg, #ffffff 0%, #ffc198 50%, #ffd678 100%);
+}
+.lista-navbar {
+    background: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border: none;
+}
+.lista-navbar:hover {
+    background-color: #ffffff;    
+    border-radius: 20px;
+    padding: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Open Sans', sans-serif;
+}
+.pie-pagina { 
+    width: 100%;
+    background-color:#ffc198;
+}
+
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width:1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px
+}
+.pie.pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie.pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+.pie.pagina .grupo-1 .box h2 {
+    color:black;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie.pagina .grupo-1 .box p {
+    color:black;
+    margin-bottom: 10px;
+}
+.pie.pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: black;
+    margin-right: 10px;
+    background-color: cornsilk;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie.pagina .grupo-1 .red-social a:hover {
+    color:#ffc198;
+}
+.pie.pagina .grupo-2 {
+    background-color: #ffc198;
+    padding: 15px 10px;
+    text-align: center;
+    color:black;
+}
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1 {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        padding: 45px 0px
+        }
+}
+
+.pie.pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: black; /* Cambiar el color a negro */
+    margin-right: 10px;
+    background-color: cornsilk;
+    text-align: center;
+    transition: all 300ms ease;
+    font-size: 24px; /* Aumentar el tamaño de los iconos a 24px */
+}
