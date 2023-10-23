@@ -4,6 +4,7 @@
     <title>Regístrate</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <img src="img/milogo.png" alt="Logo de la empresa" class="logo">
 </head>
 <body>
     <div class="container">
@@ -28,9 +29,21 @@
                     </div>  
                     <div class="message">
                         <?php
-                        require("php/conexion.php");
+                        session_start(); // Inicia la sesión
+
+                        $servidor = "localhost";
+                        $usuario = "root";
+                        $contrasena = "";
+                        $base_de_datos = "usuarios";
+
+                        $conexion = new mysqli($servidor, $usuario, $contrasena, $base_de_datos);
+
+                        if ($conexion->connect_error) {
+                            die("Conexión fallida: " . $conexion->connect_error);
+                        }
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            global $conexion; // Accede a la variable global $conexion
                             $email = $_POST["emailRegister"];
                             $contrasena = $_POST["contrasenaRegister"];
                             $aceContrasena = $_POST["aceContrasenaRegister"];

@@ -1,7 +1,16 @@
 <?php
 session_start(); // Inicia la sesión
 
-require("php/conexion.php");
+$servidor = "localhost";
+$usuario = "root";
+$contrasena = "";
+$base_de_datos = "usuarios";
+
+$conexion = new mysqli($servidor, $usuario, $contrasena, $base_de_datos);
+
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
 
 function verificarCredenciales($email, $contrasena, $conexion) {
     $email = $conexion->real_escape_string($email);
@@ -35,14 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <img src="img/logo/milogo.png" alt="Logo de la empresa" class="logo">
+    <img src="img/milogo.png" alt="Logo de la empresa" class="logo">
 </head>
 <body>
     <div class="container">
@@ -63,6 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a href="register.php">¿No te has registrado? Regístrate.</a>
                     </div>
                     <div class="message">
+                    <li class="nav-item">
+                            <a class="nav-link" name="loginguess" href="index.html">Ingresar como invitado</a>
+                        </li>
                         <?php
                         if (isset($_SESSION["mensaje"])) {
                             echo $_SESSION["mensaje"];
